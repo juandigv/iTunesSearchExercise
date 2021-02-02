@@ -7,7 +7,7 @@
 <style>
 
 body {
-  background: #20343f;
+  background: #0e0022;
 }
 
 #app {

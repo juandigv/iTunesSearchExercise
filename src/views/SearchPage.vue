@@ -2,6 +2,7 @@
     <div class="searchPage">
         <div class="searchBar">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <img class="logo" src="../assets/ituneslogo.png"/>
             <h1 class="title">iTunes Search & Selector</h1>
             <input v-model="searchField" placeholder="Search" />
             <select v-model="searchSelect">
@@ -21,7 +22,7 @@
                     <center>
                         <h4 class="type"> {{media.type}}</h4>
                     </center>
-                    <img :src="media.artwork" onerror="this.src='https://apprecs.org/ios/images/app-icons/256/3d/1090617661.jpg'" />
+                    <img class="mediaArtwork" :src="media.artwork" onerror="this.src='https://apprecs.org/ios/images/app-icons/256/3d/1090617661.jpg'" />
                     <div class="textContent">
                         <h2>{{ media.name }}</h2>
                         <h4 v-if="!(media.type === 'collection' || media.type === 'audiobook' || media.type === 'podcast')">{{ media.collectionName}}</h4>

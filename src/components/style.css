@@ -1,22 +1,23 @@
 .searchPage{
-    justify-content: center
+    text-align: center;
 }
 
 .searchBar {
-    margin: 80px 10px 80px 10px;
-    width: 90%;
-    justify-content: center;
+    margin: 50px 10px 50px 10px;
+    align-self: center;
 }
 
 .title{
-    color: #e0e0e0
+    color: #e0e0e0;
 }
 
 input{
     width: 50%;
     height: 30px;
     font-size: larger;
-    
+    background-color:#1c0043 ;
+    color: white;
+    vertical-align: middle;
 }
 
 select{
@@ -26,23 +27,30 @@ select{
     margin: 5px;
     padding-left: 10px;
     padding-right: 10px;
-  
+    background-color:#1c0043 ;
+    color: white;
+    vertical-align: middle;
 }
 
 .searchButton{
-    background-color:  #326e91;
-    border: none;
+    background-color:  #2e0a5f;
     height: 35px;
     width: 100px;
     color:#e0e0e0;
+    vertical-align: middle;
 }
 
 .cardTemplate {
     width: 100%;
     height: auto;
-    background-color: #39505D;
-    box-shadow: 0 0 6px #000000;
+    background-color: #2e0a5f;
+    box-shadow: 0 0 2px #ffffff;
     vertical-align: middle;
+}
+
+.cardTemplate:hover {
+    background-color: #430f8c;
+    box-shadow: 0 0 2px #8e04ff;
 }
 
 .textContent {
@@ -52,11 +60,15 @@ select{
     padding-right: 10%;
 }
 
-img {
+.mediaArtwork {
     width: 80%;
     border: 2px solid #7a7d84;
-    margin: 10px;
+    margin: 10px 10px 5px 5px;
     text-align: center;
+}
+
+.logo{
+    width: 20%;
 }
 
 h2 {
@@ -85,13 +97,13 @@ h4 {
 }
 
 .type {
-    color:#39505D;
-    background-color: #afafaf;
+    color:#3f2761;
+    background-color: #a2a2a2;
     border: 5px thick #afafaf;
     width: fit-content;
     padding: 5px 10px 5px 10px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 
