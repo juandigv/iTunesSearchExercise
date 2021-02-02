@@ -1,31 +1,38 @@
 <template>
     <div class="searchPage">
         <div class="searchBar">
-            <h1>iTunes Search & Selector</h1>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <h1 class="title">iTunes Search & Selector</h1>
             <input v-model="searchField" placeholder="Search" />
             <select v-model="searchSelect">
-                                        <option
-                                          v-for="type in this.searchType"
-                                          :key="type.value"
-                                          :value="type.value"
-                                        >
-                                          {{ type.text }}
-                                        </option>
-                                      </select>
-            <button v-on:click="getSearchResult">Search</button>
+                                            <option
+                                              v-for="type in this.searchType"
+                                              :key="type.value"
+                                              :value="type.value"
+                                            >
+                                              {{ type.text }}
+                                            </option>
+                                          </select>
+            <button class="searchButton" v-on:click="getSearchResult"><i class="large material-icons">search</i></button>
         </div>
         <div class="searchList">
             <div class="media" v-for="media in searchResults" :key="media.id">
                 <div class="cardTemplate">
-                    <h2> {{media.type}}</h2>
+                    <center>
+                        <h4 class="type"> {{media.type}}</h4>
+                    </center>
                     <img :src="media.artwork" onerror="this.src='https://apprecs.org/ios/images/app-icons/256/3d/1090617661.jpg'" />
                     <div class="textContent">
                         <h2>{{ media.name }}</h2>
-                        <h2 v-if="media.type != 'collection' || media.type != 'audiobook'">{{ media.collectionName}}</h2>
+                        <h4 v-if="!(media.type === 'collection' || media.type === 'audiobook' || media.type === 'podcast')">{{ media.collectionName}}</h4>
+                        <br>
                         <h4>{{ media.artist }}</h4>
-                        <h4 v-if="media.trackCount >1">{{ media.trackCount }} Tracks</h4>
-                        <h4>${{ media.price }}</h4>
+                        <h4 v-if="media.price === 0 ">FREE </h4>
+                        <h4 v-else> ${{ media.price }} </h4>
                     </div>
+                    <center>
+                        <h4 v-if="media.explicit === 'explicit'"> <i class="large material-icons">explicit</i> </h4>
+                    </center>
                 </div>
             </div>
         </div>
@@ -95,7 +102,7 @@ export default {
                         name: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
-                        trackCount: data.results[i].trackCount
+                        explicit: data.results[i].collectionExplicitness
                     });
                 } else if (data.results[i].wrapperType == "audiobook") {
                     this.addMedia({
@@ -105,7 +112,7 @@ export default {
                         name: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
-                        trackCount: data.results[i].trackCount
+                        explicit: data.results[i].collectionExplicitness
                     });
                 } else {
 
@@ -117,7 +124,7 @@ export default {
                         collectionName: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
-                        trackCount: data.results[i].trackCount
+                        explicit: data.results[i].trackExplicitness
                     });
 
                 }
@@ -133,3 +140,6 @@ export default {
 };
 </script>
 
+<style src="../components/style.css" scoped>
+
+</style>
