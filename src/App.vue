@@ -5,7 +5,6 @@
 </template>
 
 <style>
-
 body {
   background: #0e0022;
 }

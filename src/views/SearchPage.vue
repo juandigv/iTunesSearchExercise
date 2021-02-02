@@ -61,7 +61,11 @@
             <h4 v-else>${{ media.price }}</h4>
           </div>
           <center>
-            <h4 id="explicitLabel" v-if="media.explicit === 'explicit'" class="explicitLabel">
+            <h4
+              id="explicitLabel"
+              v-if="media.explicit === 'explicit'"
+              class="explicitLabel"
+            >
               <i class="large material-icons">explicit</i>
             </h4>
           </center>
@@ -80,7 +84,7 @@ export default {
     return {
       searchField: "",
       searchSelect: "all",
-      generatedURL: "",
+      generatedURL: ""
     };
   },
   methods: {
@@ -88,13 +92,13 @@ export default {
     getSearchResult() {
       var dataResults;
       jquery
-        .getJSON(this.getQueryURL(), function (data) {
+        .getJSON(this.getQueryURL(), function(data) {
           dataResults = data;
         })
         .done(() => {
           this.saveSearchResult(dataResults);
         })
-        .fail(function () {
+        .fail(function() {
           console.log("An error occurred, could not reach host ");
         });
     },
@@ -120,7 +124,7 @@ export default {
             name: data.results[i].collectionName,
             artist: data.results[i].artistName,
             price: data.results[i].collectionPrice,
-            explicit: data.results[i].collectionExplicitness,
+            explicit: data.results[i].collectionExplicitness
           });
         } else if (data.results[i].wrapperType == "audiobook") {
           this.addMedia({
@@ -133,7 +137,7 @@ export default {
             name: data.results[i].collectionName,
             artist: data.results[i].artistName,
             price: data.results[i].collectionPrice,
-            explicit: data.results[i].collectionExplicitness,
+            explicit: data.results[i].collectionExplicitness
           });
         } else {
           this.addMedia({
@@ -147,11 +151,11 @@ export default {
             collectionName: data.results[i].collectionName,
             artist: data.results[i].artistName,
             price: data.results[i].collectionPrice,
-            explicit: data.results[i].trackExplicitness,
+            explicit: data.results[i].trackExplicitness
           });
         }
       }
-    },
+    }
   },
   computed: {
     ...mapGetters(["getSearchResults", "getSearchType"]),
@@ -160,10 +164,9 @@ export default {
     },
     searchType() {
       return this.getSearchType;
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style src="../components/style.css" scoped>
-</style>
+<style src="../components/style.css" scoped></style>

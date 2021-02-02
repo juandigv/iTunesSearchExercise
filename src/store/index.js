@@ -14,7 +14,7 @@ export default new Vuex.Store({
       { text: "Music", value: "song" },
       { text: "Music Video", value: "musicVideo" },
       { text: "Audio Book", value: "audiobook" }
-    ],
+    ]
   },
   mutations: {
     addMedia(state, mediaToAdd) {
@@ -36,7 +36,7 @@ export default new Vuex.Store({
     getSearchResults(state) {
       return state.searchResults;
     },
-    getSearchType(state){
+    getSearchType(state) {
       return state.searchType;
     }
   },
