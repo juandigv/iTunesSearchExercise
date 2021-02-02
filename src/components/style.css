@@ -76,9 +76,19 @@ h2 {
 }
 
 h4 {
-  color: #afafaf;  
-  margin-top: -15px;
+    color: #afafaf;  
+    margin-top: -15px;
+}
 
+h2,h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+h2:hover, h4:hover {
+    display: block;
 }
 
 .searchList {
