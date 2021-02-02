@@ -2,18 +2,18 @@
     <div class="searchPage">
         <div class="searchBar">
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <img class="logo" src="../assets/ituneslogo.png"/>
+            <img class="logo" src="../assets/ituneslogo.png" />
             <h1 class="title">iTunes Search & Selector</h1>
             <input v-model="searchField" placeholder="Search" />
             <select v-model="searchSelect">
-                                            <option
-                                              v-for="type in this.searchType"
-                                              :key="type.value"
-                                              :value="type.value"
-                                            >
-                                              {{ type.text }}
-                                            </option>
-                                          </select>
+                                                <option
+                                                  v-for="type in searchType"
+                                                  :key="type.value"
+                                                  :value="type.value"
+                                                >
+                                                  {{ type.text }}
+                                                </option>
+                                              </select>
             <button class="searchButton" v-on:click="getSearchResult"><i class="large material-icons">search</i></button>
         </div>
         <div class="searchList">
@@ -49,23 +49,7 @@ export default {
         return {
             searchField: "",
             searchSelect: "all",
-            searchType: [
-                { text: "All", value: "all" },
-                { text: "Movie", value: "movie" },
-                { text: "Podcast", value: "podcast" },
-                { text: "Music", value: "album" },
-                { text: "Music Video", value: "musicVideo" },
-                { text: "Audio Book", value: "audiobook" },
-            ],
-            template: {
-                id: "",
-                kind: "",
-                artwork: "",
-                name: "",
-                artist: "",
-                price: "",
-            },
-            generatedURL: "",
+            generatedURL: ""
         };
     },
     methods: {
@@ -90,7 +74,6 @@ export default {
             if (this.searchSelect != "all") {
                 this.generatedURL += "&entity=" + this.searchSelect;
             }
-            console.log("URL: " + this.generatedURL);
             return this.generatedURL;
         },
         saveSearchResult(data) {
@@ -133,9 +116,12 @@ export default {
         },
     },
     computed: {
-        ...mapGetters(["getSearchResults"]),
+        ...mapGetters(["getSearchResults","getSearchType"]),
         searchResults() {
             return this.getSearchResults;
+        },
+        searchType() {
+            return this.getSearchType;
         },
     },
 };

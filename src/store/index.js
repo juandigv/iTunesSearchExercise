@@ -5,7 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    searchResults: []
+    searchResults: [],
+    searchType: [
+      { text: "All", value: "all" },
+      { text: "Movie", value: "movie" },
+      { text: "Podcast", value: "podcast" },
+      { text: "Music", value: "album" },
+      { text: "Music Video", value: "musicVideo" },
+      { text: "Audio Book", value: "audiobook" }
+    ],
   },
   mutations: {
     addMedia(state, mediaToAdd) {
@@ -24,8 +32,11 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getSearchResults(state){
+    getSearchResults(state) {
       return state.searchResults;
+    },
+    getSearchType(state){
+      return state.searchType;
     }
   },
   modules: {}
