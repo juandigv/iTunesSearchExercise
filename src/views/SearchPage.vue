@@ -82,7 +82,7 @@ export default {
                     this.addMedia({
                         id: data.results[i].collectionId,
                         type: data.results[i].collectionType,
-                        artwork: data.results[i].artworkUrl100,
+                        artwork: data.results[i].artworkUrl100.replace("100x100bb.jpg","600x600bb.jpg"),
                         name: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
@@ -92,25 +92,23 @@ export default {
                     this.addMedia({
                         id: data.results[i].collectionId,
                         type: data.results[i].wrapperType,
-                        artwork: data.results[i].artworkUrl100,
+                        artwork: data.results[i].artworkUrl100.replace("100x100bb.jpg","600x600bb.jpg"),
                         name: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
                         explicit: data.results[i].collectionExplicitness
                     });
                 } else {
-
                     this.addMedia({
                         id: data.results[i].trackId,
                         type: data.results[i].kind,
-                        artwork: data.results[i].artworkUrl100,
+                        artwork: data.results[i].artworkUrl100.replace("100x100bb.jpg","600x600bb.jpg"),
                         name: data.results[i].trackName,
                         collectionName: data.results[i].collectionName,
                         artist: data.results[i].artistName,
                         price: data.results[i].collectionPrice,
                         explicit: data.results[i].trackExplicitness
                     });
-
                 }
             }
         },

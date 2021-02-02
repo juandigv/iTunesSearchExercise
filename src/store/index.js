@@ -10,7 +10,8 @@ export default new Vuex.Store({
       { text: "All", value: "all" },
       { text: "Movie", value: "movie" },
       { text: "Podcast", value: "podcast" },
-      { text: "Music", value: "album" },
+      { text: "Music Album", value: "album" },
+      { text: "Music", value: "song" },
       { text: "Music Video", value: "musicVideo" },
       { text: "Audio Book", value: "audiobook" }
     ],
