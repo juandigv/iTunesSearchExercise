@@ -1,0 +1,120 @@
+.searchPage{
+    text-align: center;
+}
+
+.searchBar {
+    margin: 50px 10px 50px 10px;
+    align-self: center;
+}
+
+.title{
+    color: #e0e0e0;
+}
+
+input{
+    width: 50%;
+    height: 30px;
+    font-size: larger;
+    background-color:#1c0043 ;
+    color: white;
+    vertical-align: middle;
+}
+
+select{
+    width: 20%;
+    height: 35px;
+    font-size: large;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:#1c0043 ;
+    color: white;
+    vertical-align: middle;
+}
+
+.searchButton{
+    background-color:  #2e0a5f;
+    height: 35px;
+    width: 100px;
+    color:#e0e0e0;
+    vertical-align: middle;
+}
+
+.cardTemplate {
+    width: 100%;
+    height: auto;
+    background-color: #2e0a5f;
+    box-shadow: 0 0 2px #ffffff;
+    vertical-align: middle;
+}
+
+.cardTemplate:hover {
+    background-color: #430f8c;
+    box-shadow: 0 0 2px #8e04ff;
+}
+
+.textContent {
+    text-align: left;
+    padding-bottom:10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.mediaArtwork {
+    width: 80%;
+    border: 2px solid #7a7d84;
+    margin: 10px 10px 5px 5px;
+    text-align: center;
+}
+
+.logo{
+    width: 20%;
+}
+
+h2 {
+    color:#e0e0e0;
+}
+
+h4 {
+    color: #afafaf;  
+    margin-top: -15px;
+}
+
+h2,h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+h2:hover, h4:hover {
+    display: block;
+}
+
+.searchList {
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    border: 10px;
+    
+}
+
+.media{
+    vertical-align: bottom;
+}
+
+.type {
+    color:#3f2761;
+    background-color: #a2a2a2;
+    border: 5px thick #afafaf;
+    width: fit-content;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
