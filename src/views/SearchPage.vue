@@ -108,6 +108,7 @@ export default {
       if (this.searchSelect != "all") {
         this.generatedURL += "&entity=" + this.searchSelect;
       }
+      this.generatedURL += "&callback=?";
       return this.generatedURL;
     },
     saveSearchResult(data) {

@@ -72,5 +72,3 @@ Using Vue.js's v-for function, it iterates on each item of the local array and c
 Inside the project store file we got 2 list elements, one the already mentioned searchType and the other is the searchResults list, this list is our local save from the results we got from the query, and it will change using mutations and actions in the same file. Actions are used to commit the mutations and these are for clearing the searchResults array and to add new media to the array.
 
 A mockStore was created to be used on unit testing, it contains same elements as the original store but includes content from 2 querys to use with unit tests instead of calling the API.
-
-A problem found in the application is a CORS error, that it isn't fixed yet due to appearing and disappearing sometimes when using the same query link.
