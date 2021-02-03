@@ -3,33 +3,33 @@
 WebApp Project using iTunes search API
 
 
-##Guide
+## Guide
 To search some content type in the searchBar what you're looking for then click the search button.
 
 If you are looking for specific type of content you can select one of the many options available on the dropdown list, these include:
 
-*Movies
-*Podacasts
-*Music Tracks
-*Music Albums
-*Music Videos
-*AudioBooks
-*All
+* Movies
+* Podcasts
+* Music Tracks
+* Music Albums
+* Music Videos
+* AudioBooks
+* All
 
 ![alt text](src/assets/searchHeader.png)
 
 Once you've clicked the search button, a list will be filled with information about the content you're looking for right below.
 
-###Media Cards
+### Media Cards
 
 These cards contain the following information:
 
-*In the uppermost of the card you can see the type of media it is (Album, podcast, music...).
-*In the center artwork from the content will be shown.
-*Lists the media name right beneath.
-*In case the content is a single track like music, it will also show the album it belongs to (Excludes Collections).
-*Price tag for the content available at iTunes (In the case of collections it will show the price of the whole collection).
-*At the end depending if the media has sensitive content, a EXPLICIT label will be shown. 
+* In the uppermost of the card you can see the type of media it is (Album, podcast, music...).
+* In the center artwork from the content will be shown.
+* Lists the media name right beneath.
+* In case the content is a single track like music, it will also show the album it belongs to (Excludes Collections).
+* Price tag for the content available at iTunes (In the case of collections it will show the price of the whole collection).
+* At the end depending if the media has sensitive content, a EXPLICIT label will be shown. 
 
 ![alt text](src/assets/searchList.png)
 
@@ -52,13 +52,15 @@ npm run test:unit
 
 ## Tools Used
 
-*Vue.js
-*Mocha + Chai
-*HTML
-*CSS
-*JQuery
+* Vue.js
+* Mocha + Chai
+* HTML
+* CSS
+* JQuery
 
-##Project Description
+
+
+## Project Description
 Search Page contains 3 values: searchField asociated to the search textInput, searchSelect asociated to the search type dropdownList and generatedURL used by the function getQueryURL. For the icons used (Search button and EXPLICIT tag) Google's library for Material Icons was used.
 
 At the start of the page we got 5 elements these being iTunes icon, application name, search textInput field, media type dropdown list and a search button. The media type dropdown gets it's data from the project store file in /src/store/index.js from the state searchType, this is a array which has 2 elements one used for the text shown on the dropdown list and the other the value that will be used to create the Query URL. 
@@ -71,4 +73,4 @@ Inside the project store file we got 2 list elements, one the already mentioned 
 
 A mockStore was created to be used on unit testing, it contains same elements as the original store but includes content from 2 querys to use with unit tests instead of calling the API.
 
-A problem found in the application is a CORS error, that it isn't fixed yet due to appearing and dissapearing sometimes when using the same query link.
+A problem found in the application is a CORS error, that it isn't fixed yet due to appearing and disappearing sometimes when using the same query link.
